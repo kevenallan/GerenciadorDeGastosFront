@@ -1,2 +1,123 @@
-<p>login works!</p>
-<p-button icon="pi pi-check" [rounded]="true" [text]="true" [raised]="true" />
+<!-- <main class="container">
+    <section class="container">
+        <div class="form-container box-3d">
+            <header class="logo">
+                <div class="div-icon-box">
+                    <i class="pi pi-spin pi-dollar"></i>
+                </div>
+                <h3>Gerenciador de Gastos</h3>
+            </header>
+
+            <form class="form">
+                <fieldset class="form-group">
+                    <label for="usuario">Usuário</label>
+                    <input
+                        [(ngModel)]="login.usuarioModel.usuario"
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        required=""
+                    />
+
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        [(ngModel)]="login.usuarioModel.senha"
+                        required=""
+                    />
+                </fieldset>
+
+                <button
+                    class="form-submit-btn custom-gradient-button"
+                    type="submit"
+                    style="width: 100%"
+                >
+                    Entrar
+                </button>
+
+                <div
+                    class="container-ou"
+                    aria-label="Ou faça login com outra conta"
+                >
+                    <hr class="hr-width margin-right-5" />
+                    <div class="width-20">OU</div>
+                    <hr class="hr-width margin-left-5" />
+                </div>
+
+                <button
+                    class="btn-login-google form-submit-btn"
+                    aria-label="Entrar com o Google"
+                >
+                    <img
+                        src="https://img.icons8.com/color/22/000000/google-logo.png"
+                        alt="Ícone do Google"
+                    />
+                </button>
+
+                <nav>
+                    <p class="cursor-pointer">Esqueceu a senha?</p>
+                    <p class="cursor-pointer">Cadastre-se aqui</p>
+                </nav>
+            </form>
+        </div>
+    </section>
+</main> -->
+
+<main class="container">
+    <section class="container">
+        <div class="form-container box-3d">
+            <header class="logo">
+                <div class="div-icon-box">
+                    <i class="pi pi-spin pi-dollar"></i>
+                </div>
+                <p>Gerenciador de Gastos</p>
+            </header>
+            <form class="form">
+                <fieldset class="form-group">
+                    <label for="usuario">Usuario</label>
+                    <input
+                        [(ngModel)]="login.usuarioModel.usuario"
+                        type="text"
+                        id="usuario"
+                        name="usuario"
+                        required=""
+                    />
+
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        [(ngModel)]="login.usuarioModel.senha"
+                        required=""
+                    />
+                </fieldset>
+
+                <button
+                    class="form-submit-btn custom-gradient-button"
+                    type="submit"
+                    style="width: 100%"
+                >
+                    Entrar
+                </button>
+
+                <div class="container-ou">
+                    <hr class="hr-width margin-right-5" />
+                    <div class="width-20">OU</div>
+                    <hr class="hr-width margin-left-5" />
+                </div>
+
+                <button class="btn-login-google form-submit-btn">
+                    <img
+                        src="https://img.icons8.com/color/22/000000/google-logo.png"
+                    />
+                </button>
+
+                <p class="cursor-pointer">Esqueceu a senha?</p>
+                <p class="cursor-pointer">Cadastre-se aqui</p>
+            </form>
+        </div>
+    </section>
+</main>

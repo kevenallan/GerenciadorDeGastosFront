@@ -5,6 +5,13 @@ body {
     padding: 0;
 }
 
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
 //LOADING
 .loading-overlay {
     position: fixed;
