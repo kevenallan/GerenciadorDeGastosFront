@@ -1,0 +1,148 @@
+<!-- MENU -->
+<nav *ngIf="isEditarPerfil" aria-label="Menu de navegação">
+    <app-menu></app-menu>
+</nav>
+
+<main class="container">
+    <section class="form-container box-3d" aria-labelledby="form-title">
+        <header class="cadastro">
+            <i
+                class="pi pi-arrow-left cursor-pointer"
+                [pTooltip]="msgVoltar"
+                tooltipPosition="left"
+                (click)="voltar()"
+                aria-label="Voltar"
+            ></i>
+            <h1 id="form-title" class="titulo-cadastro">
+                {{ !isEditarPerfil ? "Cadastro" : "Atualizar Perfil" }}
+            </h1>
+        </header>
+
+        <form
+            [formGroup]="cadastroAtualizacaoForm"
+            (ngSubmit)="onSubmit()"
+            class="form"
+            aria-labelledby="form-title"
+        >
+            <div class="form-group">
+                <label for="nome">Nome</label>
+                <input type="text" id="nome" formControlName="nome" required />
+                <div
+                    *ngIf="
+                        cadastroAtualizacaoForm.get('nome')?.touched &&
+                        cadastroAtualizacaoForm.get('nome')?.invalid
+                    "
+                    class="error"
+                    role="alert"
+                >
+                    Nome é obrigatório.
+                </div>
+
+                <label for="email">Email</label>
+                <input
+                    type="text"
+                    id="email"
+                    formControlName="email"
+                    required
+                    [ngClass]="isUsuarioGoogle ? 'campo-desabilitado' : ''"
+                />
+                <div
+                    *ngIf="
+                        cadastroAtualizacaoForm.get('email')?.touched &&
+                        cadastroAtualizacaoForm.get('email')?.invalid
+                    "
+                    class="error"
+                    role="alert"
+                >
+                    Informe um email válido.
+                </div>
+
+                <label for="usuario">Usuário</label>
+                <input
+                    type="text"
+                    id="usuario"
+                    formControlName="usuario"
+                    required
+                    [ngClass]="isUsuarioGoogle ? 'campo-desabilitado' : ''"
+                />
+                <div
+                    *ngIf="cadastroAtualizacaoForm.get('usuario')?.touched"
+                    class="error"
+                    role="alert"
+                >
+                    <div
+                        *ngIf="cadastroAtualizacaoForm.get('usuario')?.errors?.['required']"
+                    >
+                        Usuário é obrigatório.
+                    </div>
+                    <div
+                        *ngIf="cadastroAtualizacaoForm.get('usuario')?.errors?.['minlength']"
+                    >
+                        O usuário deve ter pelo menos 3 caracteres.
+                    </div>
+                </div>
+
+                <label for="senha">Senha</label>
+                <input
+                    type="password"
+                    id="senha"
+                    formControlName="senha"
+                    required
+                    [ngClass]="isUsuarioGoogle ? 'campo-desabilitado' : ''"
+                />
+                <div
+                    *ngIf="
+                        cadastroAtualizacaoForm.get('senha')?.touched &&
+                        cadastroAtualizacaoForm.get('senha')?.invalid
+                    "
+                    class="error"
+                    role="alert"
+                >
+                    A senha deve ter pelo menos 3 caracteres.
+                </div>
+
+                <label for="confirmarSenha">Confirmar Senha</label>
+                <input
+                    type="password"
+                    id="confirmarSenha"
+                    formControlName="confirmarSenha"
+                    required
+                    [ngClass]="isUsuarioGoogle ? 'campo-desabilitado' : ''"
+                />
+                <div
+                    *ngIf="cadastroAtualizacaoForm.errors?.['senhasDiferentes'] && (cadastroAtualizacaoForm.get('confirmarSenha')?.touched || cadastroAtualizacaoForm.get('senha')?.touched)"
+                    class="error"
+                    role="alert"
+                >
+                    As senhas não coincidem.
+                </div>
+            </div>
+
+            <div
+                pTooltip="Deletar conta"
+                tooltipPosition="right"
+                style="width: fit-content"
+            >
+                <p-button
+                    *ngIf="isEditarPerfil"
+                    (click)="deletar()"
+                    icon="pi pi-trash"
+                    [text]="true"
+                    [raised]="true"
+                    [style]="{
+                        'background-color': 'gray',
+                        color: 'white'
+                    }"
+                    aria-label="Deletar conta"
+                />
+            </div>
+
+            <button
+                class="form-submit-btn custom-gradient-button"
+                type="submit"
+            >
+                {{ !isEditarPerfil ? "Cadastrar" : "Atualizar" }}
+            </button>
+        </form>
+    </section>
+</main>

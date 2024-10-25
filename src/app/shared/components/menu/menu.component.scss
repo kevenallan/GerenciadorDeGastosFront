@@ -1,0 +1,79 @@
+@import "variaveis";
+
+:host ::ng-deep .p-menubar {
+    background: $linear-gradiente;
+    border: 2px solid transparent;
+    color: white;
+}
+
+.menu-avatar {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.menu-avatar:hover {
+    background-color: rgb(247, 230, 243);
+    border-radius: 10px;
+}
+
+//TAMANHO DA "LOGO"
+.girar {
+    width: 25px;
+}
+
+.menu-avatar p {
+    margin-left: 10px;
+}
+
+:host ::ng-deep .p-avatar-circle {
+    background-color: white;
+    color: red;
+}
+
+:host
+    ::ng-deep
+    .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-content
+    .p-menuitem-link
+    .p-menuitem-text,
+:host
+    ::ng-deep
+    .p-menubar
+    .p-menubar-root-list
+    > .p-menuitem
+    > .p-menuitem-content
+    .p-menuitem-link
+    .p-menuitem-icon {
+    color: white !important;
+}
+
+:host
+    ::ng-deep
+    .p-menubar
+    .p-menuitem
+    > .p-menuitem-content
+    .p-menuitem-link:hover {
+    background-color: rgb(247, 230, 243);
+    border-radius: 10px;
+}
+
+:host
+    ::ng-deep
+    .p-menubar
+    .p-menuitem
+    > .p-menuitem-content
+    .p-menuitem-link:hover
+    .p-menuitem-text,
+:host
+    ::ng-deep
+    .p-menubar
+    .p-menuitem
+    > .p-menuitem-content
+    .p-menuitem-link:hover
+    .p-menuitem-icon {
+    color: red !important;
+}

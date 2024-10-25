@@ -1,0 +1,12 @@
+//VARIAVEIS GLOBAIS
+$linear-gradiente: linear-gradient(#212121, #212121) padding-box,
+    linear-gradient(
+            135deg,
+            pink 10%,
+            rgb(197, 32, 197) 40%,
+            rgb(145, 226, 253) 85%
+        )
+        border-box;
+$cor-roxa: #e81cff; //COR DA BORDAR DO INPUT DO "CARD"
+$cor-rosa-claro: pink;
+$cor-azul-claro: rgb(145, 226, 253);
