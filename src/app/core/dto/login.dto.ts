@@ -1,3 +1,8 @@
+import { UsuarioModel } from '../model/usuario.model';
+
 export class LoginDTO {
-    constructor(public usuario?: string, public senha?: string) {}
+    constructor(
+        public usuarioModel?: UsuarioModel,
+        public token: string = ''
+    ) {}
 }
